@@ -1,7 +1,10 @@
 <form [formGroup]="cardForm">
-    <input type='text' formControlName="name">
+  <input type="text" formControlName="name" />
+
+  <div *ngIf="cardForm.get('name')?.errors?.['required']">*zorunlu alan</div>
+  
 </form>
 
-
-<div> Form içeriği:{{cardForm.value | json}}</div>
-<div> Form valid :{{cardForm.valid ?"evet":"hayır"}}</div>
+<div>Form içeriği:{{ cardForm.value | json }}</div>
+<div>Form valid :{{ cardForm.valid ? "evet" : "hayır" }}</div>
+<div>Form hataları :{{ cardForm.get("name")?.errors | json }}</div>
