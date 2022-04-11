@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators,AbstractControl } from '@angular/forms';
 @Component({
   selector: 'app-cardform',
   templateUrl: './cardform.component.html',
@@ -14,7 +14,10 @@ export class CardformComponent implements OnInit {
         Validators.minLength(3),
       ]),
   })
-
+  convertToFormControl(absCtrl: AbstractControl | null): FormControl {
+    const ctrl = absCtrl as FormControl;
+    return ctrl;
+  }
   constructor() { }
 
   ngOnInit(): void {
