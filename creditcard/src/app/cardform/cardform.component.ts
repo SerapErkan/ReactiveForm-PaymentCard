@@ -40,4 +40,9 @@ export class CardformComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onSubmit(){
+    console.log("kaydedildi");
+  }
+
 }

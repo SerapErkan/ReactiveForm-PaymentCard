@@ -1,10 +1,11 @@
-<form [formGroup]="cardForm">
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
 
     <app-input label="Ad-Soyad" [control]="convertToFormControl(cardForm.get('name'))"></app-input>
     <app-input label="Kart Numarası" [control]="convertToFormControl(cardForm.get('cardNumber'))"></app-input>
     <app-input label="Son Kullanma Tarihi" [control]="convertToFormControl(cardForm.get('expiration'))"></app-input>
     <app-input label="Güvenlik Kodu" [control]="convertToFormControl(cardForm.get('securityCode'))"></app-input>
     
+    <button class="button is-primary is-rounded" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
 </form>
 
 <div>Form içeriği:{{ cardForm.value | json }}</div>
