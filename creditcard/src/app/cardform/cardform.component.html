@@ -1,6 +1,9 @@
 <form [formGroup]="cardForm">
 
-    <app-input [control]="convertToFormControl(cardForm.get('name'))"></app-input>
+    <app-input label="Ad-Soyad" [control]="convertToFormControl(cardForm.get('name'))"></app-input>
+    <app-input label="Kart Numarası" [control]="convertToFormControl(cardForm.get('cardNumber'))"></app-input>
+    <app-input label="Son Kullanma Tarihi" [control]="convertToFormControl(cardForm.get('expiration'))"></app-input>
+    <app-input label="Güvenlik Kodu" [control]="convertToFormControl(cardForm.get('securityCode'))"></app-input>
     
 </form>
 
