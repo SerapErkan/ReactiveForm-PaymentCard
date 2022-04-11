@@ -49,5 +49,8 @@ export class CardformComponent implements OnInit {
   onSubmit(){
     console.log("kaydedildi");
   }
+  ResetForm(){
+    this.cardForm.reset();
+  }
 
 }

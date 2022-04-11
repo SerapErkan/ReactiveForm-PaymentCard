@@ -4,8 +4,8 @@
     <app-input label="Kart Numarası" [control]="convertToFormControl(cardForm.get('cardNumber'))"></app-input>
     <app-input label="Son Kullanma Tarihi" [control]="convertToFormControl(cardForm.get('expiration'))"></app-input>
     <app-input label="Güvenlik Kodu" [control]="convertToFormControl(cardForm.get('securityCode'))"></app-input>
-    
-    <button class="button is-primary is-rounded" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
+    <button class="button is-primary is-warning" (click)="ResetForm()" type="button">Temizle</button>
+    <button class="button is-primary is-primary" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
 </form>
 
 <div>Form içeriği:{{ cardForm.value | json }}</div>
