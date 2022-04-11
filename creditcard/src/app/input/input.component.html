@@ -14,11 +14,19 @@
 </div>
 
 <ng-container *ngIf="control.dirty && control.touched && control.errors">
-  <div *ngIf="control.errors?.['required']">*zorunlu alan</div>
-  <div *ngIf="control.errors?.['minlength']">
+
+  <div class="help is-danger" *ngIf="control.errors?.['required']">*zorunlu alan</div>
+  <div class="help is-danger" *ngIf="control.errors?.['minlength']">
     Girdiğiniz isim
     {{control.errors?.['minlength']?.['actualLength']}}
     karakter içermektedir ,minumum
+    {{control.errors?.['minlength']?.['requiredLength']}}
+    karakter olmalı
+  </div>
+  <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
+    Girdiğiniz Numara
+    {{control.errors?.['minlength']?.['actualLength']}}
+    karakter içermektedir ,maxsimum
     {{control.errors?.['minlength']?.['requiredLength']}}
     karakter olmalı
   </div>
