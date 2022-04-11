@@ -7,7 +7,7 @@
       [formControl]="control"
       placeholder="Text input"
       [ngClass]="{
-        'is-danger':control.dirty && control.touched && control.errors
+        'is-danger':showErrors()
       }"
     />
   </div>
