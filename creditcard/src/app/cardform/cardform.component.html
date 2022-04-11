@@ -2,7 +2,16 @@
   <input type="text" formControlName="name" />
 
   <div *ngIf="cardForm.get('name')?.errors?.['required']">*zorunlu alan</div>
+  <div *ngIf="cardForm.get('name')?.errors?.['minlength']">
+      Girdiğiniz isim 
+      {{cardForm.get('name')?.errors?.['minlength']?.['actualLength']}}
+      karakter içermektedir ,minumum 
+      {{cardForm.get('name')?.errors?.['minlength']?.['requiredLength']}}
+      karakter olmalı
+
+  </div>
   
+
 </form>
 
 <div>Form içeriği:{{ cardForm.value | json }}</div>
