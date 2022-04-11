@@ -1,22 +1,7 @@
 <form [formGroup]="cardForm">
-  <input type="text" formControlName="name" />
 
-  <ng-container
-    *ngIf="
-    cardForm.get('name')?.dirty &&
-     cardForm.get('name')?.touched && 
-     cardForm.get('name')?.errors
-   "
-  >
-    <div *ngIf="cardForm.get('name')?.errors?.['required']">*zorunlu alan</div>
-    <div *ngIf="cardForm.get('name')?.errors?.['minlength']">
-      Girdiğiniz isim
-      {{cardForm.get('name')?.errors?.['minlength']?.['actualLength']}}
-      karakter içermektedir ,minumum
-      {{cardForm.get('name')?.errors?.['minlength']?.['requiredLength']}}
-      karakter olmalı
-    </div>
-  </ng-container>
+    <app-input [control]="cardForm.get('name')"></app-input>
+    
 </form>
 
 <div>Form içeriği:{{ cardForm.value | json }}</div>
